@@ -39,6 +39,7 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 // const drawerWidth = 240;
 
 const Dashboard = () =>{
+  // states
   const [mobileOpen, setMobileOpen] = useState(false);
   const [drawerWidth, setDrawerWidth] = useState(240);
   const [clicked, setClicked] = useState(3);
@@ -46,11 +47,13 @@ const Dashboard = () =>{
   const [patient, setPatient] = useState({});
   const [clickedMenu, setClickedMenu] = useState('Patient');
   
+
+  // handlers
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
-
+    // useEffects
       useEffect(()=>{
         fetch('https://619f39821ac52a0017ba467e.mockapi.io/DoctorDetails')
         .then(res=>res.json())
@@ -64,14 +67,15 @@ const Dashboard = () =>{
       },[]);
 
 
+      // Drawer
   const drawer = (
     <div sx={{ height:'100%', alignContent: 'space-between', position:'relative' }}>
       <Grid container sx={{ alignItems:'center', pb:1, pt:1, justifyItems:'center', justifyContent:'center' }} spacing={0}>
+        {/* Drawer Header */}
         <Grid item xs={3}>
         <AddModeratorIcon sx={{fontSize:36, color:indigo['A400']}} />
         </Grid>
         <Grid sx={{display:'flex', flexDirection:'column'}} item xs={7}>
-
         <Typography variant="h6" fontSize={20} fontWeight={800} noWrap component="div">
           Zendenta
         </Typography>
@@ -79,6 +83,8 @@ const Dashboard = () =>{
           Cabut gilgi tanpa sakit
         </Typography>
         </Grid>
+
+        {/* Drawer Control */}
         <Grid item xs={2}>
           <IconButton
             color="inherit"
@@ -86,7 +92,6 @@ const Dashboard = () =>{
             edge="start"
             onClick={handleDrawerToggle}
             sx={{display:{sm:'none'}}}
-            // style={{display:`${drawerWidth===240 ? 'none' : 'flex'}`}}
           >
             <ChevronLeftIcon sx={{color:indigo['A400']}} />
           </IconButton>
@@ -97,14 +102,15 @@ const Dashboard = () =>{
             edge="start"
             onClick={()=>setDrawerWidth(drawerWidth === 240 ? 0 : 240)}
             sx={{ mr: 2, display: {xs:'none', sm:'flex'},}}
-            // style={{display:`${drawerWidth===240 ? 'flex' : 'none'}`}}
           >
             <ChevronLeftIcon sx={{color:indigo['A400']}} />
           </IconButton>
         </Grid>
       </Grid>
-      {/* <Toolbar /> */}
+
       <Divider />
+
+      {/* Nav Menus */}
       <List>
           <Link onClick={()=>setClickedMenu('Overview')} style={{textDecoration:'none', color:'grey'}} to='overview'>
             <ListItem sx={{bgcolor:`${clicked === 1 && indigo['A400']}`, color:`${clicked === 1 && 'white'}`, '&:hover':{color:'white', bgcolor:indigo['A400']}}} onClick={()=>setClicked(1)} button>
@@ -155,6 +161,8 @@ const Dashboard = () =>{
             </ListItem>
           </Link>
       </List>
+
+      {/* Help Button in Nav Menus */}
       <Box sx={{height:'50%', p:3, display:'flex', alignItems: 'flex-end', borderBottom:'1px solid grey', mb:3}}>
         <Link style={{textDecoration:'none'}} to=''>
                 <Typography sx={{display:'flex', alignItems:'center', color:grey[800]}} variant="h6" fontSize={15} fontWeight={500} noWrap component="div">
@@ -163,6 +171,7 @@ const Dashboard = () =>{
         </Link>
       </Box>
 
+      {/* Doctor accordion in Nav Menus */}
       <Box>
           <Accordion>
           <AccordionSummary
@@ -186,12 +195,14 @@ const Dashboard = () =>{
     </div>
   );
 
-  // const drawerWidth = 240;
   
-
+  
+  // Dashboard Main Body Section
   return (
     <Box sx={{ display: 'flex' }} >
       <CssBaseline />
+
+      {/* App Ber */}
       <AppBar
         position="fixed"
         sx={{
@@ -201,7 +212,10 @@ const Dashboard = () =>{
         }}
       >
       
+      {/* App Bar-1 */}
         <Toolbar sx={{bgcolor:blueGrey[50],display:'flex', alignItems:'center', justifyContent:'space-between'}}>
+
+        {/* App Bar-1 Left Side */}
           <Box sx={{display:'flex', alignItems:'center'}}>
               <IconButton
                 color="inherit"
@@ -225,10 +239,9 @@ const Dashboard = () =>{
                 <Typography sx={{display:'flex', alignItems:'center', color:grey[800]}} variant="h6" fontSize={20} fontWeight={800} noWrap component="div">
                       <PersonOutlineRoundedIcon sx={{fontSize:36, color:indigo['A400']}}/> &nbsp; {patient?.name}
                 </Typography>
-              {/* <Grid container spacing={0}>
-                <Grid item></Grid>
-              </Grid> */}
           </Box>
+
+          {/* App Bar-1 Right Side */}
             <Box sx={{display:{xs:'none', sm:'block',md:'block'}}}>
               <InputBase
                 sx={{ ml: 1, flex: 1, border:'1px solid grey', borderRadius:'30px', px:1 }}
@@ -245,16 +258,20 @@ const Dashboard = () =>{
                 <NotificationsIcon sx={{color:'black'}} />
               </Badge>
             </Box>
-
         </Toolbar>
 
+      {/* App Bar-2 */}
         <Toolbar sx={{bgcolor:blueGrey[50], display:'flex', alignItems:'center',justifyContent:'space-between', borderTop:`1px solid ${blueGrey[100]}`, borderBottom:`1px solid ${blueGrey[100]}`}}>
+
+        {/* App Bar-2 Left Side */}
             <Breadcrumbs aria-label="breadcrumb">
               <Link underline="hover" color="inherit" to="/patientpage">
                 Home
               </Link>
               <Typography color="text.primary">{clickedMenu}</Typography>
             </Breadcrumbs>
+
+            {/* App Ber-2 Right Side */}
             <Box sx={{display:{xs:'none', sm:'block',md:'block'}}}>
               <Button sx={{textTransform:'none', alignItems:'center',mr:1, color:'black', px:2, py:1, bgcolor:'white', '&:hover':{bgcolor:'white'}}} variant="contained" disableElevation>
                   <OpenInNewIcon/> &nbsp; edit patient
@@ -262,11 +279,7 @@ const Dashboard = () =>{
               <Button sx={{textTransform:'none', alignItems:'center', color:'black', px:-1, py:1, bgcolor:'white', '&:hover':{bgcolor:'white'}}} variant="contained" disableElevation>
               <PrintIcon sx={{color:'black', fontSize:22}} />
               </Button>
-              {/* <Badge color='secondary' sx={{bgcolor:'white', p:1, borderRadius:'3px', ml:1}} variant="dot">
-                <PrintIcon sx={{color:'black', fontSize:22}} />
-              </Badge> */}
             </Box>
-
         </Toolbar>
       </AppBar>
       <Box
@@ -275,7 +288,7 @@ const Dashboard = () =>{
         aria-label="mailbox folders"
         
       >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        {/* Drawer section */}
         <Drawer
           // container={container}
           variant="temporary"
@@ -302,6 +315,8 @@ const Dashboard = () =>{
           {drawer}
         </Drawer>
       </Box>
+
+      {/* Body Section */}
       <Box
         component="main"
         sx={{ flexGrow: 1, pl:3, pr:2, pb:3, pt:11, width: { sm: `calc(100% - ${drawerWidth}px)`}}}

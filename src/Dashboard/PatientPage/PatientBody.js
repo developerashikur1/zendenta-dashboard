@@ -22,8 +22,12 @@ const PatientBody = () => {
     console.log(patient["e-mail"])
     return (
         <>
+
+            {/* Patients Body First Section */}
             <Box>
                 <Grid container spacing={1}>
+
+                {/* patients body profile */}
                     <Grid item xs={12} sm={8} md={4}>
                         <Paper sx={{display:'flex', flexDirection:'column', alignItems:'center', p:3}}>
                             <img style={{width:80, borderRadius:'100%', marginTop:'10px', marginBottom:'15px'}} src='https://mui.com/static/images/avatar/3.jpg' alt=''/>
@@ -54,10 +58,13 @@ const PatientBody = () => {
                             <Button style={{width:'100%', textTransform:'none', borderColor:'grey', color:'grey'}} variant="outlined">Send Message</Button>
                         </Paper>
                     </Grid>
+
+
+                    {/* patient body details */}
                     <Grid item xs={12} sm={4} md={8}>
-                      <Paper  sx={{p:3, height:'100%'}}>
+                      <Paper  sx={{p:{xs:3, md:3, sm:1}, height:'100%'}}>
                         <Grid container spacing={0}>
-                            <Grid sx={{py:3}} item xs={6} sm={4} md={4}>
+                            <Grid sx={{py:{xs:3, sm:0,md:3 }}} item xs={6} sm={12} md={4}>
                                     <Typography sx={{color:"rgba(128, 128, 128, 0.649)"}} variant="h6" fontSize={12} fontWeight={600} noWrap component="div">
                                         Gender
                                     </Typography>
@@ -65,7 +72,7 @@ const PatientBody = () => {
                                         {patient?.gender}
                                     </Typography>
                             </Grid>
-                            <Grid sx={{py:3}} item xs={6} sm={4} md={4}>
+                            <Grid sx={{py:{xs:3, sm:0,md:3 }}} item xs={6} sm={12} md={4}>
                                     <Typography sx={{color:"rgba(128, 128, 128, 0.649)"}} variant="h6" fontSize={12} fontWeight={600} noWrap component="div">
                                         Birthday
                                     </Typography>
@@ -73,7 +80,7 @@ const PatientBody = () => {
                                         {patient?.birthday}
                                     </Typography>
                             </Grid>
-                            <Grid sx={{py:3}} item xs={6} sm={4} md={4}>
+                            <Grid sx={{py:{xs:3, sm:0,md:3 }}} item xs={6} sm={12} md={4}>
                                     <Typography sx={{color:"rgba(128, 128, 128, 0.649)"}} variant="h6" fontSize={12} fontWeight={600} noWrap component="div">
                                         Phone Number
                                     </Typography>
@@ -81,7 +88,7 @@ const PatientBody = () => {
                                         {patient?.phone}
                                     </Typography>
                             </Grid>
-                            <Grid sx={{py:3}} item xs={6} sm={4} md={4}>
+                            <Grid sx={{py:{xs:3, sm:0,md:3 }}} item xs={6} sm={12} md={4}>
                                     <Typography sx={{color:"rgba(128, 128, 128, 0.649)"}} variant="h6" fontSize={12} fontWeight={600} noWrap component="div">
                                         {patient?.streetAddress}
                                     </Typography>
@@ -89,7 +96,7 @@ const PatientBody = () => {
                                         Street Address
                                     </Typography>
                             </Grid>
-                            <Grid sx={{py:3}} item xs={6} sm={4} md={4}>
+                            <Grid sx={{py:{xs:3, sm:0,md:3 }}} item xs={6} sm={12} md={4}>
                                     <Typography sx={{color:"rgba(128, 128, 128, 0.649)"}} variant="h6" fontSize={12} fontWeight={600} noWrap component="div">
                                         {patient?.city}
                                     </Typography>
@@ -97,7 +104,7 @@ const PatientBody = () => {
                                         City
                                     </Typography>
                             </Grid>
-                            <Grid sx={{py:3}} item xs={6} sm={4} md={4}>
+                            <Grid sx={{py:{xs:3, sm:0,md:3 }}} item xs={6} sm={12} md={4}>
                                     <Typography sx={{color:"rgba(128, 128, 128, 0.649)"}} variant="h6" fontSize={12} fontWeight={600} noWrap component="div">
                                         {patient?.zipCode}
                                     </Typography>
@@ -105,7 +112,7 @@ const PatientBody = () => {
                                         Zip Code
                                     </Typography>
                             </Grid>
-                            <Grid sx={{py:3}} item xs={6} sm={4} md={4}>
+                            <Grid sx={{py:{xs:3, sm:0,md:3 }}} item xs={6} sm={12} md={4}>
                                     <Typography sx={{color:"rgba(128, 128, 128, 0.649)"}} variant="h6" fontSize={12} fontWeight={600} noWrap component="div">
                                         {patient?.memberStatus}
                                     </Typography>
@@ -113,7 +120,7 @@ const PatientBody = () => {
                                         Member Status
                                     </Typography>
                             </Grid>
-                            <Grid sx={{py:3}} item xs={6} sm={4} md={4}>
+                            <Grid sx={{py:{xs:3, sm:0,md:3 }}} item xs={6} sm={12} md={4}>
                                     <Typography sx={{color:"rgba(128, 128, 128, 0.649)"}} variant="h6" fontSize={12} fontWeight={600} noWrap component="div">
                                         {patient?.registerDate}
                                     </Typography>
@@ -127,7 +134,7 @@ const PatientBody = () => {
                 </Grid>
             </Box>  
 
-            {/* Appointment Tabs */}
+            {/* Patient Body Second Section and Appointment Tabs Section */}
             <Paper sx={{ mt:3, p:3}}>
                 <Box  sx={{height:'250px', overflow:'hidden', overflowY:'scroll'}}>
                         <Appointments/>

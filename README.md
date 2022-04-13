@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# After Visiting The website (Documentation)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is about Zendenta [Live Link is](https://zendenta-dashboard.netlify.app/patientpage).
 
-## Available Scripts
+### Created Time and Pressure
 
-In the project directory, you can run:
+1. Ito design and develop this dashboard i was spend 1day. in the day i take rest sometime. So without rest i can say i created the site in 15hour totally.
+2. It was wonderful project for me. It was medium-low pressure for me to designed.
 
-### `yarn start`
+#### `Note`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I designed and develop this dashboard only from my knowledge.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Projects Details
 
-### `yarn test`
+1. has two nav ber.
+2. Has a drawer. in the drawer has all menus. if select a menu from drawer it will show in body and site will not be reload.
+3. there are just implemented the patient menu and patient page.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Technologies are used`
 
-### `yarn build`
+1. React.js, Material-ui, react-router-dom-v6, material-ui icons.
+2. Code Pushed in Github
+3. Host in Netlify.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Features are`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. It's a Doctor Appointments dashboard website.
+2. Doctors details from json data.
+3. Patient profile and patients details is showing from fake data for fetching problems.
+4. Appointments are showing from json data.
+5. Notes are showing from fake data
+6. Files/Documents are showing from json data
+7. if hover on the upcoming appointments card left selector color will be change to green
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `Extra Feature Added`
 
-### `yarn eject`
+1. It's fully responsive on mobile, tab and desktop.
+2. if click others menu they as these page are not created so that it will redirect in the notfound page.
+3. if click 'past appointment' and 'Medical Records' button, then they will not found the data and there will not showing the card.
+4. Also when 'upcoming appointment' button then it will find data and will show in the card these data.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `My Opinion`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+It was some tricky to design ui perfectly. but i tried. it is not pixel perfect design. its base on my guessed.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for read the documentation.
+Sincerely,
+Md. Ashikur Rahman
